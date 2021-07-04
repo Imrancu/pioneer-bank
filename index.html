@@ -74,20 +74,26 @@
             // deposit button event handler
         const depositBtn = document.getElementById('addDeposit');
         depositBtn.addEventListener('click', function() {
-                const depositNumber = getInputNumber('depositAmount')
+            const depositNumber = getInputNumber('depositAmount')
 
-                // const currentDeposit = document.getElementById('currentDeposit').innerText;
-                // const currentDepositNumber = parseFloat(currentDeposit);
-                // const totalDeposit = depositNumber + currentDepositNumber;
-                // document.getElementById('currentDeposit').innerText = totalDeposit;
-
-                // Below immediate First line for above 4 lines code. This is the game of function
+            if (depositNumber < 0) {
+                alert("Deposit can't be negative.")
+            } else {
                 updateSpanText('currentDeposit', depositNumber)
                 updateSpanText('currentBalance', depositNumber)
-
                 document.getElementById('depositAmount').value = ""
-            })
-            // Withdraw button event handler
+            }
+        })
+
+        // const currentDeposit = document.getElementById('currentDeposit').innerText;
+        // const currentDepositNumber = parseFloat(currentDeposit);
+        // const totalDeposit = depositNumber + currentDepositNumber;
+        // document.getElementById('currentDeposit').innerText = totalDeposit;
+
+        // Below immediate First line for above 4 lines code. This is the game of function
+
+
+        // Withdraw button event handler
         const withdrawBtn = document.getElementById('addWithdraw');
         withdrawBtn.addEventListener('click', function() {
             withdrawNumber = getInputNumber('withdrawAmount');
